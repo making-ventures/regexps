@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.0](https://github.com/making-ventures/regexp-utils/compare/v1.0.0...v1.1.0) (2026-02-18)
+
+### Features
+
+* add digitsOnly constant ([b041a66](https://github.com/making-ventures/regexp-utils/commit/b041a669106e66fa3be2889899d7cfbedddd3d0a))
+
 ## 1.0.0 (2026-02-18)
 
 ### ⚠ BREAKING CHANGES

@@ -7,6 +7,7 @@ export const invisibleControlChars = /[\u0002\u0003\u200B\u202A\u202B]/gu;
 
 // Digit / phone patterns
 export const digits = /\d/gu;
+export const digitsOnly = /^\d+$/u;
 export const nonDigit = /\D/gu;
 export const nonPlusNonDigit = /[^\d+]/gu;
 export const russianPhone = /^(\+?7|8)(\d{10})$/u;

@@ -1,6 +1,6 @@
 {
   "name": "@mkven/regexps",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Shared regular expression constants for text normalization and validation",
   "author": "Damir Manapov",
   "license": "MIT",

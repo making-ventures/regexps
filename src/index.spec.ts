@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   cyrillicDashQuotation,
   digits,
+  digitsOnly,
   encExtension,
   gzEncExtension,
   gzExtension,
@@ -66,6 +67,16 @@ describe("digit / phone patterns", () => {
     expect("abc123def".replaceAll(digits, "")).toBe("abcdef");
     expect("abcdef".replaceAll(digits, "")).toBe("abcdef");
     expect("12345".replaceAll(digits, "")).toBe("");
+  });
+
+  it("digitsOnly tests if entire string is digits", () => {
+    expect(digitsOnly.test("12345")).toBe(true);
+    expect(digitsOnly.test("0")).toBe(true);
+    expect(digitsOnly.test("abc")).toBe(false);
+    expect(digitsOnly.test("123abc")).toBe(false);
+    expect(digitsOnly.test("")).toBe(false);
+    expect(digitsOnly.test(" 123 ")).toBe(false);
+    expect(digitsOnly.test("12.34")).toBe(false);
   });
 
   it("nonDigit matches non-digits", () => {
