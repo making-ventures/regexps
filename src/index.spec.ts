@@ -16,11 +16,11 @@ import {
   nonDigit,
   nonPlusNonDigit,
   russianPhone,
-  whitespace,
   spacesAndNewlines,
   tabNewlineCarriageReturn,
   trailingQuote,
   uppercaseLatinLetters,
+  whitespace,
   whitespaceAndNbsp,
 } from "./index";
 
