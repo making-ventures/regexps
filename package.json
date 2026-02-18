@@ -1,0 +1,38 @@
+{
+  "name": "@mkven/regexp-utils",
+  "version": "0.1.0",
+  "description": "Shared regular expression constants for text normalization and validation",
+  "author": "Damir Manapov",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.2",
+    "@release-it/conventional-changelog": "^10.0.0",
+    "release-it": "^19.0.3",
+    "typescript": "^5.8.3",
+    "vitest": "^4.0.18"
+  },
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.cjs.json",
+    "lint": "biome check --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "release": "release-it",
+    "release:dry": "release-it --dry-run"
+  }
+}
