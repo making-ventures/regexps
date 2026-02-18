@@ -39,7 +39,9 @@ describe("text normalization", () => {
   });
 
   it("tabNewlineCarriageReturn matches tabs, newlines, carriage returns", () => {
-    expect("a\tb\nc\rd".replaceAll(tabNewlineCarriageReturn, " ")).toBe("a b c d");
+    expect("a\tb\nc\rd".replaceAll(tabNewlineCarriageReturn, " ")).toBe(
+      "a b c d",
+    );
   });
 
   it("invisibleControlChars strips control characters", () => {
@@ -59,14 +61,16 @@ describe("digit / phone patterns", () => {
   });
 
   it("nonPlusNonDigit keeps digits and plus", () => {
-    expect("+7(999)123-45-67".replaceAll(nonPlusNonDigit, "")).toBe("+79991234567");
+    expect("+7(999)123-45-67".replaceAll(nonPlusNonDigit, "")).toBe(
+      "+79991234567",
+    );
   });
 
   it("phoneNormalization captures Russian phone parts", () => {
     const match = "+79991234567".match(phoneNormalization);
     expect(match).not.toBeNull();
-    expect(match![1]).toBe("+7");
-    expect(match![2]).toBe("9991234567");
+    expect(match?.[1]).toBe("+7");
+    expect(match?.[2]).toBe("9991234567");
 
     expect("89991234567".match(phoneNormalization)).not.toBeNull();
     expect("12345".match(phoneNormalization)).toBeNull();
@@ -90,8 +94,9 @@ describe("character class validation", () => {
 
   it("cyrillicDashQuotation allows cyrillic, dash, quotes", () => {
     expect(cyrillicDashQuotation.test("Иванов-Петров")).toBe(true);
-    expect(cyrillicDashQuotation.test("О'Коннор")).toBe(false);
+    expect(cyrillicDashQuotation.test("О'Коннор")).toBe(true);
     expect(cyrillicDashQuotation.test("Smith")).toBe(false);
+    expect(cyrillicDashQuotation.test("abc123")).toBe(false);
   });
 
   it("latinDashQuotation allows latin, dash, quotes", () => {
@@ -101,11 +106,15 @@ describe("character class validation", () => {
   });
 
   it("uppercaseLatinLetters matches uppercase letters", () => {
-    expect("helloWorld".replaceAll(uppercaseLatinLetters, "_$&")).toBe("hello_World");
+    expect("helloWorld".replaceAll(uppercaseLatinLetters, "_$&")).toBe(
+      "hello_World",
+    );
   });
 
   it("latinNumbersDotUnderscoreHyphenPlus validates email local parts", () => {
-    expect(latinNumbersDotUnderscoreHyphenPlus.test("user.name+tag")).toBe(true);
+    expect(latinNumbersDotUnderscoreHyphenPlus.test("user.name+tag")).toBe(
+      true,
+    );
     expect(latinNumbersDotUnderscoreHyphenPlus.test("user@name")).toBe(false);
   });
 });
