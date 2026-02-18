@@ -1,5 +1,5 @@
 {
-  "name": "@mkven/regexp-utils",
+  "name": "@mkven/regexps",
   "version": "0.1.0",
   "description": "Shared regular expression constants for text normalization and validation",
   "author": "Damir Manapov",

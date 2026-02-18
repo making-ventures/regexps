@@ -1,17 +1,17 @@
-# @mkven/regexp-utils
+# @mkven/regexps
 
 Shared regular expression constants for text normalization and validation.
 
 ## Install
 
 ```sh
-pnpm add @mkven/regexp-utils
+pnpm add @mkven/regexps
 ```
 
 ## Usage
 
 ```ts
-import { space, nonDigit, leadingQuote, trailingQuote } from "@mkven/regexp-utils";
+import { space, nonDigit, leadingQuote, trailingQuote } from "@mkven/regexps";
 
 "hello world".replaceAll(space, "_"); // "hello_world"
 "abc123".replaceAll(nonDigit, ""); // "123"
