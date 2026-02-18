@@ -11,9 +11,9 @@ pnpm add @mkven/regexps
 ## Usage
 
 ```ts
-import { space, nonDigit, leadingQuote, trailingQuote } from "@mkven/regexps";
+import { whitespace, nonDigit, leadingQuote, trailingQuote } from "@mkven/regexps";
 
-"hello world".replaceAll(space, "_"); // "hello_world"
+"hello world".replaceAll(whitespace, "_"); // "hello_world"
 "abc123".replaceAll(nonDigit, ""); // "123"
 ```
 
@@ -23,7 +23,7 @@ import { space, nonDigit, leadingQuote, trailingQuote } from "@mkven/regexps";
 
 | Constant | Pattern | Flags | Description |
 |---|---|---|---|
-| `space` | `\s` | `gu` | Any whitespace character |
+| `whitespace` | `\s` | `gu` | Any whitespace character |
 | `spacesAndNewlines` | `(\s\|\n)` | `gu` | Whitespace or newline |
 | `whitespaceAndNbsp` | `(?:\s\|&nbsp;)+` | `gu` | Whitespace or HTML nbsp entity |
 | `tabNewlineCarriageReturn` | `[\t\n\r]` | `gu` | Tab, newline, carriage return |
@@ -36,7 +36,7 @@ import { space, nonDigit, leadingQuote, trailingQuote } from "@mkven/regexps";
 | `digits` | `\d` | `gu` | Any digit |
 | `nonDigit` | `\D` | `gu` | Any non-digit |
 | `nonPlusNonDigit` | `[^\d+]` | `gu` | Any character except digit or plus |
-| `phoneNormalization` | `^(\+?7\|8)(\d{10})$` | `u` | Russian phone number capture |
+| `russianPhone` | `^(\+?7\|8)(\d{10})$` | `u` | Russian phone number capture |
 
 ### Character class validation
 

@@ -15,8 +15,8 @@ import {
   leadingQuote,
   nonDigit,
   nonPlusNonDigit,
-  phoneNormalization,
-  space,
+  russianPhone,
+  whitespace,
   spacesAndNewlines,
   tabNewlineCarriageReturn,
   trailingQuote,
@@ -25,11 +25,11 @@ import {
 } from "./index";
 
 describe("text normalization", () => {
-  it("space matches whitespace", () => {
-    expect("hello world".replaceAll(space, "_")).toBe("hello_world");
-    expect("a\tb".replaceAll(space, "_")).toBe("a_b");
-    expect("a\u00A0b".replaceAll(space, "_")).toBe("a_b");
-    expect("a\vb".replaceAll(space, "_")).toBe("a_b");
+  it("whitespace matches any whitespace character", () => {
+    expect("hello world".replaceAll(whitespace, "_")).toBe("hello_world");
+    expect("a\tb".replaceAll(whitespace, "_")).toBe("a_b");
+    expect("a\u00A0b".replaceAll(whitespace, "_")).toBe("a_b");
+    expect("a\vb".replaceAll(whitespace, "_")).toBe("a_b");
   });
 
   it("spacesAndNewlines matches whitespace and newlines", () => {
@@ -79,23 +79,23 @@ describe("digit / phone patterns", () => {
     expect("a+b".replaceAll(nonPlusNonDigit, "")).toBe("+");
   });
 
-  it("phoneNormalization captures Russian phone parts", () => {
-    const plusSeven = "+79991234567".match(phoneNormalization);
+  it("russianPhone captures Russian phone parts", () => {
+    const plusSeven = "+79991234567".match(russianPhone);
     expect(plusSeven?.[1]).toBe("+7");
     expect(plusSeven?.[2]).toBe("9991234567");
 
-    const eight = "89991234567".match(phoneNormalization);
+    const eight = "89991234567".match(russianPhone);
     expect(eight?.[1]).toBe("8");
     expect(eight?.[2]).toBe("9991234567");
 
-    const bareSeven = "79991234567".match(phoneNormalization);
+    const bareSeven = "79991234567".match(russianPhone);
     expect(bareSeven?.[1]).toBe("7");
     expect(bareSeven?.[2]).toBe("9991234567");
 
-    expect("+89991234567".match(phoneNormalization)).toBeNull();
-    expect("7999123456".match(phoneNormalization)).toBeNull();
-    expect("+7999123456789".match(phoneNormalization)).toBeNull();
-    expect("12345".match(phoneNormalization)).toBeNull();
+    expect("+89991234567".match(russianPhone)).toBeNull();
+    expect("7999123456".match(russianPhone)).toBeNull();
+    expect("+7999123456789".match(russianPhone)).toBeNull();
+    expect("12345".match(russianPhone)).toBeNull();
   });
 });
 

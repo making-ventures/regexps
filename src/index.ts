@@ -1,5 +1,5 @@
 // Text normalization
-export const space = /\s/gu;
+export const whitespace = /\s/gu;
 export const spacesAndNewlines = /(\s|\n)/gu;
 export const whitespaceAndNbsp = /(?:\s|&nbsp;)+/gu;
 export const tabNewlineCarriageReturn = /[\t\n\r]/gu;
@@ -9,7 +9,7 @@ export const invisibleControlChars = /[\u0002\u0003\u200B\u202A\u202B]/gu;
 export const digits = /\d/gu;
 export const nonDigit = /\D/gu;
 export const nonPlusNonDigit = /[^\d+]/gu;
-export const phoneNormalization = /^(\+?7|8)(\d{10})$/u;
+export const russianPhone = /^(\+?7|8)(\d{10})$/u;
 
 // Character class validation
 export const latinOnly = /^[A-Za-z]*$/u;
