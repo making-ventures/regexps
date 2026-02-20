@@ -1,5 +1,11 @@
 # Changelog
 
+## [](https://github.com/making-ventures/regexp-utils/compare/v1.2.0...vnull) (2026-02-20)
+
+### Bug Fixes
+
+* add commonjs type to cjs output for ESM compat ([fdaa4bb](https://github.com/making-ventures/regexp-utils/commit/fdaa4bb24a3e789c8b19912941b3aea2814e30ed))
+
 ## [1.2.0](https://github.com/making-ventures/regexp-utils/compare/v1.0.0...v1.2.0) (2026-02-18)
 
 ### Features
