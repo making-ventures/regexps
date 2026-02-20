@@ -1,6 +1,6 @@
 # Changelog
 
-## [](https://github.com/making-ventures/regexp-utils/compare/v1.2.1...vnull) (2026-02-20)
+## [1.2.3](https://github.com/making-ventures/regexp-utils/compare/v1.2.1...v1.2.3) (2026-02-20)
 
 ### Documentation
 
