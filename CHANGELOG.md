@@ -1,5 +1,11 @@
 # Changelog
 
+## [](https://github.com/making-ventures/regexp-utils/compare/v1.2.1...vnull) (2026-02-20)
+
+### Documentation
+
+* fix changelog version headers ([50edc71](https://github.com/making-ventures/regexp-utils/commit/50edc71b9b239e2ae847de7d34ef3c2a2fdae540))
+
 ## [1.2.1](https://github.com/making-ventures/regexp-utils/compare/v1.2.0...v1.2.1) (2026-02-20)
 
 ### Bug Fixes
