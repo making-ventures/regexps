@@ -1,6 +1,6 @@
 {
   "name": "@mkven/regexps",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Shared regular expression constants for text normalization and validation",
   "author": "Damir Manapov",
   "license": "MIT",
@@ -21,10 +21,10 @@
     "access": "public"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.2",
-    "@release-it/conventional-changelog": "^10.0.0",
-    "release-it": "^19.0.3",
-    "typescript": "^5.8.3",
+    "@biomejs/biome": "^2.4.3",
+    "@release-it/conventional-changelog": "^10.0.5",
+    "release-it": "^19.2.4",
+    "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   },
   "scripts": {
